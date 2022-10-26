@@ -7,43 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+    <button onclick="speak()">Click me</button>
     <script>
-        let object = {
-            name: 'kaspar',
-            age: 29,
-            hobbys: ['coding', 'games', 'movies'],
-            address: {
-                city: 'Tallinn',
-                street: 'Loodjärve',
-                house: '25',
-                county: 'Harjumaa',
-                country: 'Estonia',
-                '1postal-code':'dasda'
-            },
-            hello(){
-                console.log(this); // this object
-                console.log('hello ' + this.name);
-            },
-            hello2: function(){
-                console.log(this); // this object
-                console.log('hello ' + this.name);
-            },
-            hello3:()=>{
-                console.log(this); // this Window
-                console.log('hello3');
-            }
-        };
-        console.log(object);
-        console.log(object.name);
-        console.log(object.address.country);
-        console.log(object.hobbys[1]);
-        console.log(object.address['1postal-code']);
+        console.log(window);
+        console.log(document);
+        function speak(){
+            let utterance = new SpeechSynthesisUtterance("Tere ma olen Kaspar Martin Suursalu");
+            speechSynthesis.speak(utterance);
+        }
 
-        object.hello();
-        object.hello2();
-        object.hello3();
-        object.name = 'Martin';
-        console.log(object);
     </script>
 </body>
 </html>
