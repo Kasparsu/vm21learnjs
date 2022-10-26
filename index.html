@@ -8,27 +8,34 @@
 </head>
 <body>
     <script>
-        let array = [1, 2.2, 'hello', true, [1,2,3]];
-        array[2] = 'not hello';
-        console.log(array);
-        console.log(array[4][1]);
-        console.log(array.length);
-        console.log(array.reverse());
-        array.push('apple');
-        console.log(array);
-        array.push('cherry');
-        console.log(array);
-        array.push('mango', 'pear', 'banana');
-        console.log(array);
-        console.log(array.pop());
-        console.log(array);
-        array.unshift('banana');
-        console.log(array);
-        console.log(array.shift());
-        console.log(array);
-        console.log(array.slice(2,3));
-        console.log(array.splice(2,1));
-        console.log(array);
+        function hello(name){
+            console.log('hello ' + name);
+        }
+
+        function sum(a, b){
+            return a+b;
+        }
+
+        hello('Kaspar');
+        hello('Martin');
+        hello('Vambola');
+
+        console.log(sum(3,5));
+        let answer = sum(3,5);
+        console.log(sum(answer, 19));
+
+        function recursion(i){
+            if(i<10){
+                console.log(i);
+                i+=1;
+                recursion(i);
+            }
+        }
+        
+        recursion(0);
+
+
+
     </script>
 </body>
 </html>
