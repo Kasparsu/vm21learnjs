@@ -7,15 +7,28 @@
     <title>Document</title>
 </head>
 <body>
-    <button onclick="speak()">Click me</button>
+    <h1 id="greeting">Hello world!</h1>
+    <button id="button">Click me</button>
     <script>
         console.log(window);
         console.log(document);
-        function speak(){
-            let utterance = new SpeechSynthesisUtterance("Tere ma olen Kaspar Martin Suursalu");
-            speechSynthesis.speak(utterance);
-        }
 
+        
+        let button = document.getElementById('button');
+        button.addEventListener('click', event => {
+            let element = document.getElementById('greeting');
+            element.style.color = '#' + Math.floor(Math.random()*16777215).toString(16);
+        });
+
+        // setInterval(()=>{
+        //     let element = document.getElementById('greeting');
+        //     element.style.color = '#' + Math.floor(Math.random()*16777215).toString(16);
+        // }, 1000);
+
+        setTimeout(()=>{
+            let element = document.getElementById('greeting');
+            element.style.color = '#' + Math.floor(Math.random()*16777215).toString(16);
+        }, 5000);
     </script>
 </body>
 </html>
